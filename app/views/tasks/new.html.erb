@@ -1,0 +1,21 @@
+<div class="container">
+  <h1>New task</h1>
+  <%= form_for(@task) do |t| %>
+    <div class="form-group">
+      <strong><%= t.label :title %></strong>
+      <%= t.text_field :title, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <strong><%= t.label :details %></strong>
+      <%= t.text_field :details, class: 'form-control' %>
+    </div>
+
+    <div class="input"><%= t.submit class: 'btn btn-primary' %></div>
+  <% end %>
+  <div class="border-top mt-2">
+    <div class="back-link">
+      <i class="fas fa-redo mt-2"></i><span><%= link_to "  Back to list", tasks_path %></span>
+    </div>
+  </div>
+</div>

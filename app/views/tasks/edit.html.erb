@@ -1,0 +1,26 @@
+<div class="container">
+  <h1>Edit task</h1>
+  <%= form_for(@task) do |t| %>
+    <div class="form-group">
+      <strong><%= t.label :title %></strong>
+      <%= t.text_field :title, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <strong><%= t.label :details %></strong>
+      <%= t.text_field :details, class: 'form-control' %>
+    </div>
+
+    <div class="form-check">
+      <%= t.check_box :completed, class: 'form-check-input' %>
+      <%= t.label :completed, "Done", class: 'form-check-label' %></span>
+    </div>
+
+    <div class="input"><%= t.submit class: 'btn btn-primary' %></div>
+  <% end %>
+  <div class="border-top mt-2">
+    <div class="back-link">
+      <i class="fas fa-redo"></i><span><%= link_to "  Back to list", tasks_path %></span>
+    </div>
+  </div>
+</div>
